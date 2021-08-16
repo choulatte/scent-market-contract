@@ -1,4 +1,4 @@
-package com.choulatte.scentcontract.application;
+package com.choulatte.scentcontract.service;
 
 import org.springframework.stereotype.Service;
 

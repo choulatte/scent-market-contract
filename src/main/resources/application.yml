@@ -1,0 +1,29 @@
+spring:
+  application:
+    name: contract
+  datasource:
+    url: jdbc:mysql://203.250.148.28:3306/dev?serverTimezone=Asia/Seoul&createDatabaseIfNotExist=true&autoReconnect=true&useSSL=false&characterEncoding=utf8
+    username: username
+    password: password
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: create
+    generate-ddl: false
+
+eureka:
+  client:
+    service-url:
+      default-zone: http://localhost:8761/eureka/
+    register-with-eureka: true
+    fetch-registry: true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health, info, metrics
+
+server:
+  port: 8085
