@@ -1,16 +1,23 @@
 spring:
   application:
     name: contract
+  config:
+    import: optional:configserver:http://localhost:8888/
   datasource:
     url: jdbc:mysql://203.250.148.28:3306/dev?serverTimezone=Asia/Seoul&createDatabaseIfNotExist=true&autoReconnect=true&useSSL=false&characterEncoding=utf8
-    username: username
-    password: password
+    username: root
+    password: Graphics405!
     driver-class-name: com.mysql.cj.jdbc.Driver
   jpa:
     show-sql: true
     hibernate:
       ddl-auto: create
     generate-ddl: false
+  profiles:
+    active: dev
+  redis:
+    host: localhost
+    port: 6379
 
 eureka:
   client:
@@ -23,7 +30,7 @@ management:
   endpoints:
     web:
       exposure:
-        include: health, info, metrics
+        include: env, health, info, metrics, refresh
 
 server:
   port: 8085
