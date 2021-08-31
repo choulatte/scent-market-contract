@@ -2,6 +2,7 @@ package com.choulatte.scentcontract.controller;
 
 import com.choulatte.scentcontract.dto.ContractDTO;
 import com.choulatte.scentcontract.dto.ContractDetailDTO;
+import com.choulatte.scentcontract.dto.ContractStatusChangeReqDTO;
 import com.choulatte.scentcontract.service.ContractService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -33,4 +34,10 @@ public class ContractController {
         return ResponseEntity.ok(null);
     }
 
+    @PostMapping(value = "/{contractIdx}/status")
+    public ResponseEntity<ContractDTO> changeContractStatus(@RequestHeader(value = "user-idx") String userIdx,
+                                                            @PathVariable(value = "contractIdx") String contractIdx,
+                                                            @RequestBody ContractStatusChangeReqDTO contractStatusChangeReqDTO) {
+        return ResponseEntity.ok(null);
+    }
 }
